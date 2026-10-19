@@ -10,12 +10,12 @@ unmodified in this repository and still imported. Changed for this repository, a
   * every declaration of this file (and of the other 10 copied files) has the suffix `C588AT`
     on its name, so that it does not collide with OpenAI's original;
   * OpenAI's exponent `alpha = 1 - 2/10^11` and envelope `hills` are replaced by
-    `alphaC588AT = 1 - 1261/10^6` and `hillsC588AT` (Work/FourierC588AT/Seam.lean), and the single use of
+    `alphaC588AT = 1 - 12655/10^7` and `hillsC588AT` (Work/FourierC588AT/Seam.lean), and the single use of
     OpenAI's `hills_program` by `hillsC588AT_program`;
   * `decimalExponent`, `decimalTime`, `TimeBounds`, `DFTGoal`, `ConvGoal` are replaced by their
-    `C588AT` versions from Work/FourierC588AT/Goal.lean (exponent `1 - 63/50000`);
+    `C588AT` versions from Work/FourierC588AT/Goal.lean (exponent `1 - 6327/5000000`);
   * imports point to the copies.
-  * literal `let d : ℝ := 2/(10:ℝ)^11` -> `let d : ℝ := 1261/(10:ℝ)^6` (alpha_thetaC588AT: the local constant d must equal 1 - alphaC588AT)
+  * literal `let d : ℝ := 2/(10:ℝ)^11` -> `let d : ℝ := 12655/(10:ℝ)^7` (alpha_thetaC588AT: the local constant d must equal 1 - alphaC588AT)
   * `theorem transform_mainC588AT : DFTGoalC588AT :=`: docstring added
   * `theorem convolution_mainC588AT : ConvGoalC588AT :=`: docstring added
 Comments and docstrings below are OpenAI's and describe OpenAI's network, not ours.
@@ -57,7 +57,7 @@ lemma theta_ltC588AT : theta < 1 := by
   exact Real.log_lt_log (by linarith) h.2
 
 lemma alpha_thetaC588AT : alphaC588AT < theta := by
-  let d : ℝ := 1261/(10:ℝ)^6
+  let d : ℝ := 12655/(10:ℝ)^7
   have hp : 0<d := by dsimp [d]; norm_num
   have hm : 2 ≤ paperM := by norm_num [paperM]
   have hx : 0<paperMultiplier := lt_trans zero_lt_one multiplier_rangeC588AT.1
@@ -154,9 +154,9 @@ theorem convolution_main_orderC588AT : ∃ order solve W,
   exact ⟨o,s,lunchC588AT a b stretchC588AT,hp,Skies.time_boundC588AT h a b,fun n hn =>
     ⟨ho n hn,(ho n hn).symm ▸ (receipt_bound _ (stretch_posC588AT hn)).2⟩⟩
 
-/-- **The discrete Fourier transform of every length in `O(n (log n)^(1 - 63/50000))`.**
+/-- **The discrete Fourier transform of every length in `O(n (log n)^(1 - 6327/5000000))`.**
 OpenAI's `transform_main` (one fixed program, OpenAI's own `DFTProgram`, `paperTime` and `nlogn`)
-with the decimal exponent `1 - 1/10^13` replaced by `decimalExponentC588AT = 1 - 63/50000`
+with the decimal exponent `1 - 1/10^13` replaced by `decimalExponentC588AT = 1 - 6327/5000000`
 (Work/FourierC588AT/Goal.lean). Sibling of the Walsh-Hadamard theorem `wht_main_block_C588ATx`: both
 follow from one kernel program, `RAM.hillsC588AT_program` (Work/FourierC588AT/Seam.lean). -/
 theorem transform_mainC588AT : DFTGoalC588AT :=

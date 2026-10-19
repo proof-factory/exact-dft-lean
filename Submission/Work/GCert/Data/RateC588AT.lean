@@ -26,102 +26,102 @@ theorem blocksC588AT_proper : ∀ b ∈ blocksC588AT, 1 ≤ b.1 ∧ b.1 < 73 := 
   decide
 
 
-theorem term0_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 1 185400 ≤ ((25535039:ℝ)/10000) :=
-  term_le 73 1 185400 (1261/(10:ℝ)^6) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term0_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 1 185400 ≤ ((2553553191:ℝ)/1000000) :=
+  term_le 73 1 185400 (12655/(10:ℝ)^7) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 26 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term1_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 2 35424 ≤ ((9749331:ℝ)/10000) :=
-  term_le 73 2 35424 (1261/(10:ℝ)^6) ((359731226059:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term1_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 2 35424 ≤ ((487474411:ℝ)/500000) :=
+  term_le 73 2 35424 (12655/(10:ℝ)^7) ((359731226059:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 24 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term2_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 3 20160 ≤ ((1663669:ℝ)/2000) :=
-  term_le 73 3 20160 (1261/(10:ℝ)^6) ((1595923576241:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term2_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 3 20160 ≤ ((20796161:ℝ)/25000) :=
+  term_le 73 3 20160 (12655/(10:ℝ)^7) ((1595923576241:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 23 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term3_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 4 16704 ≤ ((4593229:ℝ)/5000) :=
-  term_le 73 4 16704 (1261/(10:ℝ)^6) ((290416508003:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term3_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 4 16704 ≤ ((229664437:ℝ)/250000) :=
+  term_le 73 4 16704 (12655/(10:ℝ)^7) ((290416508003:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 22 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term4_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 5 4032 ≤ ((2770997:ℝ)/10000) :=
-  term_le 73 5 4032 (1261/(10:ℝ)^6) ((670255382179:ℝ)/250000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term4_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 5 4032 ≤ ((69275739:ℝ)/250000) :=
+  term_le 73 5 4032 (12655/(10:ℝ)^7) ((670255382179:ℝ)/250000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 21 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term5_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 6 4032 ≤ ((3324431:ℝ)/10000) :=
-  term_le 73 6 4032 (1261/(10:ℝ)^6) ((1249349985961:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term5_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 6 4032 ≤ ((332446833:ℝ)/1000000) :=
+  term_le 73 6 4032 (12655/(10:ℝ)^7) ((1249349985961:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 21 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term6_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 8 12000 ≤ ((6593701:ℝ)/5000) :=
-  term_le 73 8 12000 (1261/(10:ℝ)^6) ((221101789947:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term6_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 8 12000 ≤ ((659376633:ℝ)/500000) :=
+  term_le 73 8 12000 (12655/(10:ℝ)^7) ((221101789947:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 20 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term7_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 16 3584 ≤ ((7870393:ℝ)/10000) :=
-  term_le 73 16 3584 (1261/(10:ℝ)^6) ((151787071891:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term7_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 16 3584 ≤ ((787044603:ℝ)/1000000) :=
+  term_le 73 16 3584 (12655/(10:ℝ)^7) ((151787071891:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 17 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term8_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 32 3584 ≤ ((15727033:ℝ)/10000) :=
-  term_le 73 32 3584 (1261/(10:ℝ)^6) ((16494470767:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term8_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 32 3584 ≤ ((786354527:ℝ)/500000) :=
+  term_le 73 32 3584 (12655/(10:ℝ)^7) ((16494470767:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 14 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term9_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 48 3584 ≤ ((2357849:ℝ)/1000) :=
-  term_le 73 48 3584 (1261/(10:ℝ)^6) ((209629215121:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term9_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 48 3584 ≤ ((1178926709:ℝ)/500000) :=
+  term_le 73 48 3584 (12655/(10:ℝ)^7) ((209629215121:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 11 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term10_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 68 72 ≤ ((134149:ℝ)/2000) :=
-  term_le 73 68 72 (1261/(10:ℝ)^6) ((35475867987:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term10_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 68 72 ≤ ((16768629:ℝ)/250000) :=
+  term_le 73 68 72 (12655/(10:ℝ)^7) ((35475867987:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 7 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term11_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 72 1 ≤ ((1233:ℝ)/1250) :=
-  term_le 73 72 1 (1261/(10:ℝ)^6) ((6896661067:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term11_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 72 1 ≤ ((986319:ℝ)/1000000) :=
+  term_le 73 72 1 (12655/(10:ℝ)^7) ((6896661067:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 6 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term12_C588AT : T 73 (1 - 1261/(10:ℝ)^6) 1 1 ≤ ((69:ℝ)/5000) :=
-  term_le 73 1 1 (1261/(10:ℝ)^6) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term12_C588AT : T 73 (1 - 12655/(10:ℝ)^7) 1 1 ≤ ((6887:ℝ)/500000) :=
+  term_le 73 1 1 (12655/(10:ℝ)^7) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 26 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem moment_C588AT_upper : moment 73 (1 - 1261/(10:ℝ)^6) blocksC588AT ≤ ((14989833:ℝ)/1250) := by
-  have hsum : moment 73 (1 - 1261/(10:ℝ)^6) blocksC588AT
-      = T 73 (1 - 1261/(10:ℝ)^6) 1 185400 + (T 73 (1 - 1261/(10:ℝ)^6) 2 35424 + (T 73 (1 - 1261/(10:ℝ)^6) 3 20160 + (T 73 (1 - 1261/(10:ℝ)^6) 4 16704 + (T 73 (1 - 1261/(10:ℝ)^6) 5 4032 + (T 73 (1 - 1261/(10:ℝ)^6) 6 4032 + (T 73 (1 - 1261/(10:ℝ)^6) 8 12000 + (T 73 (1 - 1261/(10:ℝ)^6) 16 3584 + (T 73 (1 - 1261/(10:ℝ)^6) 32 3584 + (T 73 (1 - 1261/(10:ℝ)^6) 48 3584 + (T 73 (1 - 1261/(10:ℝ)^6) 68 72 + 0)))))))))) := rfl
+theorem moment_C588AT_upper : moment 73 (1 - 12655/(10:ℝ)^7) blocksC588AT ≤ ((119919909:ℝ)/10000) := by
+  have hsum : moment 73 (1 - 12655/(10:ℝ)^7) blocksC588AT
+      = T 73 (1 - 12655/(10:ℝ)^7) 1 185400 + (T 73 (1 - 12655/(10:ℝ)^7) 2 35424 + (T 73 (1 - 12655/(10:ℝ)^7) 3 20160 + (T 73 (1 - 12655/(10:ℝ)^7) 4 16704 + (T 73 (1 - 12655/(10:ℝ)^7) 5 4032 + (T 73 (1 - 12655/(10:ℝ)^7) 6 4032 + (T 73 (1 - 12655/(10:ℝ)^7) 8 12000 + (T 73 (1 - 12655/(10:ℝ)^7) 16 3584 + (T 73 (1 - 12655/(10:ℝ)^7) 32 3584 + (T 73 (1 - 12655/(10:ℝ)^7) 48 3584 + (T 73 (1 - 12655/(10:ℝ)^7) 68 72 + 0)))))))))) := rfl
   rw [hsum]
   linarith [term0_C588AT, term1_C588AT, term2_C588AT, term3_C588AT, term4_C588AT, term5_C588AT, term6_C588AT, term7_C588AT, term8_C588AT, term9_C588AT, term10_C588AT]
 
-theorem moment_C588AT_normalized : moment 73 (1 - 1261/(10:ℝ)^6) blocksC588AT / (11992:ℝ) < (999989:ℝ)/1000000 := by
+theorem moment_C588AT_normalized : moment 73 (1 - 12655/(10:ℝ)^7) blocksC588AT / (11992:ℝ) < (9999993:ℝ)/10000000 := by
   apply (div_lt_iff₀ (by norm_num : (0:ℝ) < 11992)).mpr
   have h := moment_C588AT_upper
   linarith
 
-/-- **whole-block fact** of `blocksC588AT` at exponent `1 - 1261/10^6`, fill parameter `s = 40`: the hypothesis `hnum` of `RAM.engine_program_group_list` (u = 73, W = 11992).  Relative slack of the rational certificate: 1.12e-05. -/
+/-- **whole-block fact** of `blocksC588AT` at exponent `1 - 12655/10^7`, fill parameter `s = 40`: the hypothesis `hnum` of `RAM.engine_program_group_list` (u = 73, W = 11992).  Relative slack of the rational certificate: 7.63e-07. -/
 theorem fold_C588AT :
-    ((2:ℝ)^40 - 1) * moment 73 (1 - 1261/(10:ℝ)^6) blocksC588AT
-      + ((11992:ℕ):ℝ) * (T 73 (1 - 1261/(10:ℝ)^6) (73 - 1) 1 + T 73 (1 - 1261/(10:ℝ)^6) 1 1)
+    ((2:ℝ)^40 - 1) * moment 73 (1 - 12655/(10:ℝ)^7) blocksC588AT
+      + ((11992:ℕ):ℝ) * (T 73 (1 - 12655/(10:ℝ)^7) (73 - 1) 1 + T 73 (1 - 12655/(10:ℝ)^7) 1 1)
       < (2:ℝ)^40 * ((11992:ℕ):ℝ) := by
-  have hsum : moment 73 (1 - 1261/(10:ℝ)^6) blocksC588AT
-      = T 73 (1 - 1261/(10:ℝ)^6) 1 185400 + (T 73 (1 - 1261/(10:ℝ)^6) 2 35424 + (T 73 (1 - 1261/(10:ℝ)^6) 3 20160 + (T 73 (1 - 1261/(10:ℝ)^6) 4 16704 + (T 73 (1 - 1261/(10:ℝ)^6) 5 4032 + (T 73 (1 - 1261/(10:ℝ)^6) 6 4032 + (T 73 (1 - 1261/(10:ℝ)^6) 8 12000 + (T 73 (1 - 1261/(10:ℝ)^6) 16 3584 + (T 73 (1 - 1261/(10:ℝ)^6) 32 3584 + (T 73 (1 - 1261/(10:ℝ)^6) 48 3584 + (T 73 (1 - 1261/(10:ℝ)^6) 68 72 + 0)))))))))) := rfl
+  have hsum : moment 73 (1 - 12655/(10:ℝ)^7) blocksC588AT
+      = T 73 (1 - 12655/(10:ℝ)^7) 1 185400 + (T 73 (1 - 12655/(10:ℝ)^7) 2 35424 + (T 73 (1 - 12655/(10:ℝ)^7) 3 20160 + (T 73 (1 - 12655/(10:ℝ)^7) 4 16704 + (T 73 (1 - 12655/(10:ℝ)^7) 5 4032 + (T 73 (1 - 12655/(10:ℝ)^7) 6 4032 + (T 73 (1 - 12655/(10:ℝ)^7) 8 12000 + (T 73 (1 - 12655/(10:ℝ)^7) 16 3584 + (T 73 (1 - 12655/(10:ℝ)^7) 32 3584 + (T 73 (1 - 12655/(10:ℝ)^7) 48 3584 + (T 73 (1 - 12655/(10:ℝ)^7) 68 72 + 0)))))))))) := rfl
   have b0 := term0_C588AT
   have b1 := term1_C588AT
   have b2 := term2_C588AT
@@ -138,7 +138,7 @@ theorem fold_C588AT :
   have e1 : ((2:ℝ)^40 - 1) = 1099511627775 := by norm_num
   have e2 : (2:ℝ)^40 = 1099511627776 := by norm_num
   have e3 : ((11992:ℕ):ℝ) = 11992 := by norm_num
-  have e4 : T 73 (1 - 1261/(10:ℝ)^6) (73 - 1) 1 = T 73 (1 - 1261/(10:ℝ)^6) 72 1 := rfl
+  have e4 : T 73 (1 - 12655/(10:ℝ)^7) (73 - 1) 1 = T 73 (1 - 12655/(10:ℝ)^7) 72 1 := rfl
   rw [e1, e2, e3, e4, hsum]
   linarith
 

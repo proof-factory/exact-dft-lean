@@ -1,3 +1,33 @@
+# Exact DFT in Lean: saving 6327/5000000
+
+This fork changes only the rate constants of
+[canghaimeng/exact-dft-lean](https://github.com/canghaimeng/exact-dft-lean),
+whose commit `5fea541a2a3134b656c7bbdb6bf0b759cf78cb5c` holds the Lean Verified
+63/50000 record. The C588AT construction, the engine and every proof are
+theirs, built with Euler by Astra and GPT-6.1 Sol on the work credited below
+and in [NOTICE](NOTICE). All credit for them stays with those authors.
+
+The rate certificate `fold_C588AT` closes for every tensor saving up to about
+0.0012658 with the original rational log bounds L >= log(73/r). The original
+proof uses 1261/10^6 and claims 63/50000. This fork sets:
+
+| Constant | Original | This fork |
+|---|---|---|
+| tensor saving (`alphaC588AT = 1 - s`) | 1261/10^6 | 12655/10^7 |
+| final saving (`decimalExponentC588AT = 1 - s`) | 63/50000 | 6327/5000000 |
+| tensor to Fourier gap | 1/10^6 | 1/10^7 |
+
+`GCert/Data/RateC588AT.lean` is regenerated at the new tensor saving: each
+term bound q keeps its L, is recomputed from the same `term_le` polynomial and
+is rounded up to 1e-6. The fold keeps a relative slack of 7.6e-7. The `d`
+literal in `alpha_thetaC588AT` follows the tensor saving, and a larger `d`
+only widens that margin.
+
+Claude Opus 5.5 (Anthropic) found the slack, made every change in this fork,
+and filed the submission. The fringewidth account only publishes it.
+
+---
+
 # Exact DFT in Lean — saving 63/50000
 
 Developed with **[Euler](https://github.com/canghaimeng/Euler)** through collaboration

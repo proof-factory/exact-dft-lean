@@ -21,8 +21,8 @@ C588AT certificate are proved in the imported modules.
 namespace OAI.PowerSaving
 noncomputable section
 
-/-- Tensor exponent, leaving a saving gap of 1/1000000 before Fourier transfer. -/
-def alphaC588AT : ℝ := 1 - 1261 / (10 : ℝ)^6
+/-- Tensor exponent, leaving a saving gap of 1/10000000 before Fourier transfer. -/
+def alphaC588AT : ℝ := 1 - 12655 / (10 : ℝ)^7
 
 theorem alphaC588AT_pos : 0 < alphaC588AT := by norm_num [alphaC588AT]
 theorem alphaC588AT_lt : alphaC588AT < 1 := by norm_num [alphaC588AT]
@@ -102,10 +102,10 @@ end RAM
 
 namespace SeamC588AT
 
-def targetExponentC588AT : ℝ := 1 - (63 : ℝ) / 50000
+def targetExponentC588AT : ℝ := 1 - (6327 : ℝ) / 5000000
 
 lemma tensor_fourier_slack :
-    targetExponentC588AT - alphaC588AT = 1 / (1000000 : ℝ) := by
+    targetExponentC588AT - alphaC588AT = 1 / (10000000 : ℝ) := by
   norm_num [targetExponentC588AT, alphaC588AT]
 
 lemma alphaC588AT_lt_target : alphaC588AT < targetExponentC588AT := by

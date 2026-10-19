@@ -10,10 +10,10 @@ unmodified in this repository and still imported. Changed for this repository, a
   * every declaration of this file (and of the other 10 copied files) has the suffix `C588AT`
     on its name, so that it does not collide with OpenAI's original;
   * OpenAI's exponent `alpha = 1 - 2/10^11` and envelope `hills` are replaced by
-    `alphaC588AT = 1 - 1261/10^6` and `hillsC588AT` (Work/FourierC588AT/Seam.lean), and the single use of
+    `alphaC588AT = 1 - 12655/10^7` and `hillsC588AT` (Work/FourierC588AT/Seam.lean), and the single use of
     OpenAI's `hills_program` by `hillsC588AT_program`;
   * `decimalExponent`, `decimalTime`, `TimeBounds`, `DFTGoal`, `ConvGoal` are replaced by their
-    `C588AT` versions from Work/FourierC588AT/Goal.lean (exponent `1 - 63/50000`);
+    `C588AT` versions from Work/FourierC588AT/Goal.lean (exponent `1 - 6327/5000000`);
   * imports point to the copies.
 Comments and docstrings below are OpenAI's and describe OpenAI's network, not ours.
 -/
