@@ -14,7 +14,7 @@ namespace OAI.PowerSaving.BridgeRate.C588AT
 open Finset Binary Matrix RAM CB FoldRate
 noncomputable section
 
-def padPrice (φ : ℕ → ℝ) : ℝ := 504 * bcost φ 1 + 72 * bcost φ 68
+def padPrice (φ : ℕ → ℝ) : ℝ := 472 * bcost φ 1 + 1 * bcost φ 37
 
 def unitPrice (φ : ℕ → ℝ) : ℝ :=
   72 * GXD.C588AT.invPrice φ + (112 : ℝ) * GX.bankPrice377 φ + padPrice φ
@@ -27,7 +27,7 @@ theorem unit_cost (φ : ℕ → ℝ) :
   norm_num [bcost]
   ring
 
-theorem unit_tally : unitPrice (fun r => (r : ℝ)) = (11992 : ℝ) * 73 - 2560 := by
+theorem unit_tally : unitPrice (fun r => (r : ℝ)) = (11925 : ℝ) * 73 - 2560 := by
   rw [unit_cost]
   exact BlockAccounting.blocksC588AT_tally
 

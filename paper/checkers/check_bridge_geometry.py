@@ -170,8 +170,7 @@ def check_banks(data):
     assert Counter(residuals) == Counter({9: 360, 8: 140, 7: 32, 5: 8, 4: 48})
     patterns = [(30, (6, 1, 1, 0, 1)), (18, (5, 3, 0, 0, 1)),
                 (3, (7, 0, 0, 2, 0)), (1, (6, 0, 2, 1, 0)),
-                (7, (1, 8, 0, 0, 0)), (7, (8, 0, 0, 0, 0)),
-                (1, (0, 0, 0, 1, 0))]
+                (7, (1, 8, 0, 0, 0))]
     weights = (9, 8, 7, 5, 4)
     waiting = {r: deque(q for q, z in enumerate(residuals) if z == r)
                for r in weights}
@@ -180,36 +179,61 @@ def check_banks(data):
         for _ in range(mult):
             groups.append([waiting[r].popleft()
                            for r, n in zip(weights, counts) for _ in range(n)])
-    assert all(not v for v in waiting.values()) and len(groups) == 67
-    loads = [0]*4824
+    assert len(groups) == 59
+    q5 = waiting[5].popleft()
+    q9s = list(waiting[9])
+    assert len(q9s) == 56 and all(not v for r, v in waiting.items() if r != 9)
+    rows = [[-1]*588 for _ in range(72)]
+    for k in range(72):
+        for g, group in enumerate(groups):
+            for position, q in enumerate(group):
+                rows[k][q] = 72*g + (k+position) % 72
+    stage_q9_banks = [[] for _ in range(72)]
+    for k in range(72):
+        rows[k][q5] = 4248 + (k // 2)
+    for m in range(36):
+        b = 4248 + m
+        for j in range(7):
+            stage_q9_banks[(2*m + 2 + j) % 72].append(b)
+    pool_strided = []
+    for pass_idx in range(8):
+        pool_strided.extend(range(4284, 4756))
+        if pass_idx < 4:
+            pool_strided.append(4756)
+    idx = 0
+    for k in range(72):
+        need = 56 - len(stage_q9_banks[k])
+        extra = pool_strided[idx:idx+need]
+        idx += need
+        for q, b in zip(q9s, stage_q9_banks[k] + extra):
+            rows[k][q] = b
+    loads = [0]*4757
     checked = 0
     for k in range(72):
         used = set()
         stage = k % 9
-        for g, group in enumerate(groups):
-            for position, q in enumerate(group):
-                bank = 72*g + (k+position) % 72
-                assert bank not in used
-                used.add(bank)
-                u = set(range(loads[bank]))
-                t = set(range(loads[bank], loads[bank]+residuals[q]))
-                assert u.isdisjoint(t) and max(t) < D
-                label = data["frames"][data["start"][224+q]]
-                pivots = {x.bit_length()-1 for x in label}
-                r = {8*stage+j for j in range(9) if j not in pivots}
-                assert len(t) == len(r) == residuals[q]
-                # Explicit permutation sigma(T)=R, extended on complements.
-                sigma = dict(zip(sorted(t), sorted(r)))
-                sigma.update(zip(sorted(set(range(D))-t), sorted(set(range(D))-r)))
-                assert len(set(sigma.values())) == D
-                assert {sigma[j] for j in t} == r
-                loads[bank] += residuals[q]
-                checked += 1
+        for q, bank in enumerate(rows[k]):
+            assert bank not in used and 0 <= bank < 4757
+            used.add(bank)
+            u = set(range(loads[bank]))
+            t = set(range(loads[bank], loads[bank]+residuals[q]))
+            assert u.isdisjoint(t) and max(t) < D
+            label = data["frames"][data["start"][224+q]]
+            pivots = {x.bit_length()-1 for x in label}
+            r = {8*stage+j for j in range(9) if j not in pivots}
+            assert len(t) == len(r) == residuals[q]
+            # Explicit permutation sigma(T)=R, extended on complements.
+            sigma = dict(zip(sorted(t), sorted(r)))
+            sigma.update(zip(sorted(set(range(D))-t), sorted(set(range(D))-r)))
+            assert len(set(sigma.values())) == D
+            assert {sigma[j] for j in t} == r
+            loads[bank] += residuals[q]
+            checked += 1
         assert len(used) == 588
     pads = Counter(D-load for load in loads)
-    assert pads == Counter({0: 4248, 1: 504, 68: 72})
+    assert pads == Counter({0: 4284, 1: 472, 37: 1})
     assert min(loads) > 0 and max(loads) == 73
-    return {"bank_count": 4824, "uses_checked": checked,
+    return {"bank_count": 4757, "uses_checked": checked,
             "padding_histogram": dict(sorted(pads.items())),
             "groups": groups}, pads
 
@@ -228,10 +252,10 @@ def main():
     total = Counter({r: 72*n for r, n in local.items()})
     total.update({r: 8*112*n for r, n in climbs.items()})
     total.update({r: n for r, n in pads.items() if r})
-    expected = {1: 185400, 2: 35424, 3: 20160, 4: 16704, 5: 4032,
-                6: 4032, 8: 12000, 16: 3584, 32: 3584, 48: 3584, 68: 72}
+    expected = {1: 185368, 2: 35424, 3: 20160, 4: 16704, 5: 4032,
+                6: 4032, 8: 12000, 16: 3584, 32: 3584, 37: 1, 48: 3584}
     assert total == Counter(expected)
-    assert sum(r*n for r, n in total.items()) == 73*11992-2560
+    assert sum(r*n for r, n in total.items()) == 73*11925-2560
     report = {"status": "PASS: exact finite geometry checks, not Euler admission",
               "created_at": datetime.now(timezone.utc).isoformat(),
               "run_command": "python3 checkers/check_bridge_geometry.py",
@@ -239,7 +263,7 @@ def main():
               "checker_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               "classes": classes, "scalar_and_climbs": scalar, "banks": banks,
               "profile_per_orthogonal_class": dict(sorted(total.items())),
-              "live_roles_per_class": 11992, "central_copy_arrays_per_class": 8,
+              "live_roles_per_class": 11925, "central_copy_arrays_per_class": 8,
               "proof_boundary": ["local provider semantics is a separate premise",
                                  "all-class covariance and complex adapters require the ordinary proof",
                                  "no root DFT claim is certified by this finite run"]}

@@ -21,8 +21,8 @@ C588AT certificate are proved in the imported modules.
 namespace OAI.PowerSaving
 noncomputable section
 
-/-- Tensor exponent, leaving a saving gap of 1/10000000 before Fourier transfer. -/
-def alphaC588AT : ℝ := 1 - 12655 / (10 : ℝ)^7
+/-- Tensor exponent, leaving a saving gap of 2/10^11 before Fourier transfer. -/
+def alphaC588AT : ℝ := 1 - 126611852 / (10 : ℝ)^11
 
 theorem alphaC588AT_pos : 0 < alphaC588AT := by norm_num [alphaC588AT]
 theorem alphaC588AT_lt : alphaC588AT < 1 := by norm_num [alphaC588AT]
@@ -72,7 +72,7 @@ theorem engine_C588AT (cl : Paint) (m : Bool) {ι : Type U} (k : ι → ℕ)
       (fun i => givenBits cl (k i) (v i)) (fun i => (bits (k i)).tape (ripple (k i) (v i)))
       (fun i => 2^k i * envelope alphaC588AT (k i)) :=
   GX.engine_of_ginv_401 GXD.C588AT.ginv h9 GXD.C588AT.sched GXD.C588AT.ginv_fits
-    73 11992 rfl GXD.C588AT.width (by norm_num) BlockAccounting.blocksC588AT
+    73 11925 rfl GXD.C588AT.width (by norm_num) BlockAccounting.blocksC588AT
     unit_invoice 40 alphaC588AT alphaC588AT_pos.le alphaC588AT_lt.le
     BlockAccounting.fold_C588AT cl m k v
 
@@ -102,10 +102,10 @@ end RAM
 
 namespace SeamC588AT
 
-def targetExponentC588AT : ℝ := 1 - (6327 : ℝ) / 5000000
+def targetExponentC588AT : ℝ := 1 - (2532237 : ℝ) / 2000000000
 
 lemma tensor_fourier_slack :
-    targetExponentC588AT - alphaC588AT = 1 / (10000000 : ℝ) := by
+    targetExponentC588AT - alphaC588AT = 2 / (100000000000 : ℝ) := by
   norm_num [targetExponentC588AT, alphaC588AT]
 
 lemma alphaC588AT_lt_target : alphaC588AT < targetExponentC588AT := by

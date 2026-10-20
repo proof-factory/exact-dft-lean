@@ -17,7 +17,7 @@ namespace PowerSaving
 noncomputable section
 open RAM RAM.Ty Filter Asymptotics
 
-def decimalExponentC588AT : ℝ := 1 - 6327/(5000000:ℕ)
+def decimalExponentC588AT : ℝ := 1 - 2532237/(2000000000:ℕ)
 
 def decimalTimeC588AT (n : ℕ) : ℝ := (n:ℝ) * (Real.log (n:ℝ)) ^ decimalExponentC588AT
 

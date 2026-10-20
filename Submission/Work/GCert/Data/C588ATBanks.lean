@@ -17,7 +17,7 @@ open OAI.PowerSaving CB GF
 noncomputable section
 
 def sched : GX.BankSched (Fin raw.R) :=
-  GX.BankSched.ofTab 4824 raw.R schedRows schedPad schedRes sched_ok
+  GX.BankSched.ofTab 4757 raw.R schedRows schedPad schedRes sched_ok
 
 /-- The helper entrance labels from the already checked label certificate. -/
 def bankEnt (q : Fin raw.R) : SLbl (Fin aux.p.h) :=
@@ -43,12 +43,12 @@ theorem fits_of_residuals {H : Type} [Fintype H] (ent : Fin raw.R → SLbl H)
     sched.fits ent :=
   GX.BankSched.ofTab_fits _ _ _ _ _ sched_ok ent he
 
-theorem width : 64 * Fintype.card (Fin raw.v) + sched.nb = 11992 := by
+theorem width : 64 * Fintype.card (Fin raw.v) + sched.nb = 11925 := by
   rw [Fintype.card_fin]
   rfl
 
 theorem live_card (Γ : Type) [Fintype Γ] :
-    Fintype.card (GX.BLive401 Γ (Fin raw.v) sched.nb) = Fintype.card Γ * 11992 := by
+    Fintype.card (GX.BLive401 Γ (Fin raw.v) sched.nb) = Fintype.card Γ * 11925 := by
   rw [GX.card_BLive401, width]
 
 theorem pad_price (φ : ℕ → ℝ) :

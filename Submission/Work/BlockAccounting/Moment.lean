@@ -46,15 +46,15 @@ lemma log_le_of_le_expsum (x L : ℝ) (N : ℕ) (hx : 0 < x) (hL : 0 ≤ L)
 
 /-- Third-order upper bound of `exp` on `[0,1]`. -/
 lemma exp_le_cubic (x : ℝ) (h0 : 0 ≤ x) (h1 : x ≤ 1) :
-    Real.exp x ≤ 1 + x + x^2/2 + x^3*(2/9) := by
-  have h := Real.exp_bound' h0 h1 (n := 3) (by norm_num)
+    Real.exp x ≤ 1 + x + x^2/2 + x^3/6 + x^4*(5/96) := by
+  have h := Real.exp_bound' h0 h1 (n := 4) (by norm_num)
   norm_num [Finset.sum_range_succ, Nat.factorial] at h
   linarith
 
 /-- `(r/m)^(1-ε) ≤ (r/m) (1 + x + x²/2 + (2/9) x³)` with `x = ε L`, when `log (m/r) ≤ L`. -/
 lemma rpow_ratio_le3 (r m L ε : ℝ) (hr : 0 < r) (hm : 0 < m) (hε : 0 ≤ ε) (hL0 : 0 ≤ L)
     (hL : Real.log (m/r) ≤ L) (hx : ε * L ≤ 1) :
-    (r/m)^(1-ε) ≤ r/m * (1 + ε*L + (ε*L)^2/2 + (ε*L)^3*(2/9)) := by
+    (r/m)^(1-ε) ≤ r/m * (1 + ε*L + (ε*L)^2/2 + (ε*L)^3/6 + (ε*L)^4*(5/96)) := by
   have hx0 : (0:ℝ) < r/m := div_pos hr hm
   have hlog : Real.log (r/m) = - Real.log (m/r) := by
     rw [← Real.log_inv, inv_div]
@@ -71,13 +71,13 @@ lemma rpow_ratio_le3 (r m L ε : ℝ) (hr : 0 < r) (hm : 0 < m) (hε : 0 ≤ ε)
 /-- Upper bound for one term of the moment at `z = 1 - ε`. -/
 lemma term_le (m r n : ℕ) (ε L q : ℝ) (hr : 0 < r) (hm : 0 < m) (hε : 0 ≤ ε) (hL0 : 0 ≤ L)
     (hL : Real.log ((m:ℝ)/(r:ℝ)) ≤ L) (hx : ε * L ≤ 1)
-    (hq : (n:ℝ) * ((r:ℝ)/(m:ℝ) * (1 + ε*L + (ε*L)^2/2 + (ε*L)^3*(2/9))) ≤ q) :
+    (hq : (n:ℝ) * ((r:ℝ)/(m:ℝ) * (1 + ε*L + (ε*L)^2/2 + (ε*L)^3/6 + (ε*L)^4*(5/96))) ≤ q) :
     T m (1-ε) r n ≤ q := by
   have hr' : (0:ℝ) < (r:ℝ) := by exact_mod_cast hr
   have hm' : (0:ℝ) < (m:ℝ) := by exact_mod_cast hm
   have h := rpow_ratio_le3 (r:ℝ) (m:ℝ) L ε hr' hm' hε hL0 hL hx
   have h' : T m (1-ε) r n
-      ≤ (n:ℝ) * ((r:ℝ)/(m:ℝ) * (1 + ε*L + (ε*L)^2/2 + (ε*L)^3*(2/9))) :=
+      ≤ (n:ℝ) * ((r:ℝ)/(m:ℝ) * (1 + ε*L + (ε*L)^2/2 + (ε*L)^3/6 + (ε*L)^4*(5/96))) :=
     mul_le_mul_of_nonneg_left h (by positivity)
   exact h'.trans hq
 

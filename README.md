@@ -1,3 +1,26 @@
+# Exact DFT in Lean: saving 2532237/2000000000 (0.0012661185)
+
+This repository improves the Lean-verified all-length exact discrete Fourier transform bound from `6327/5000000` (`0.0012654`, [fringewidth/exact-dft-lean](https://github.com/fringewidth/exact-dft-lean)) and `63/50000` (`0.00126`, [canghaimeng/exact-dft-lean](https://github.com/canghaimeng/exact-dft-lean)) to **`2532237/2000000000` (`0.0012661185`)** via two improvements on top of the credited C588AT construction:
+
+1. **Globally Optimal Cross-Stage 4,757-Bank Schedule (`W = 11,925` live roles, down from `11,992`):**
+   - In `canghaimeng/exact-dft-lean`, the 588 helper slots per sub-stage (with entrance residual weights `{9: 360, 8: 140, 7: 32, 5: 8, 4: 48}`) were partitioned within a single sub-stage into 67 groups (59 groups of load 73, 7 groups of load 72, and 1 singleton group of load 5) and replicated cyclically across the 72 sub-stages (`67 × 72 = 4,824` banks, pad profile `{0: 4248, 1: 504, 68: 72}`, `W = 7168 + 4824 = 11,992`).
+   - However, `GX.schedK` (`Submission/Work/Bridge401/SchedK.lean`) does not require banks to be 72-fold cyclic copies of 1-stage groups; it only requires 72 rows of length `R = 588` where each row is injective into `0..nb-1` and each bank `b` has total load `73 - pad[b]` across the 72 sub-stages.
+   - Across all 72 sub-stages, the leftover weight-5 slot is used 72 times and the 56 leftover weight-9 slots are used `56 × 72 = 4,032` times. Pairing 2 uses of the weight-5 slot (from sub-stages `2m, 2m+1`) with 7 uses of weight-9 slots (from 7 distinct sub-stages) forms **36 additional full banks of load `2×5 + 7×9 = 73` (pad 0)**. The remaining `4032 - 252 = 3,780` weight-9 uses pack into **472 banks of load `8×9 = 72` (pad 1)** and **1 bank of load `4×9 = 36` (pad 37)**.
+   - This reduces the helper bank count by **67 banks per orthogonal class** (`4,824 → 4,757`, `W: 11,992 → 11,925`, pad profile `{0: 4284, 1: 472, 37: 1}`). Since total discount from weight 9 across all 72 sub-stages is `72 × 476 = 34,272 = 4,284 × 8`, at most `4,284` banks can have load 73 (pad 0), and by Karamata's inequality on the strictly concave function $p \mapsto (p/73)^{1-\varepsilon}$, `{0: 4284, 1: 472, 37: 1}` majorizes every valid pad profile and is the **unique globally optimal bank schedule** across all 72 sub-stages for these entrance residuals, raising the exact moment root from `0.0012658312` to `0.001266118556`.
+
+2. **Fourth-Order Rational Moment Certificate (`Moment.lean` & `RateC588AT.lean`):**
+   - Tightening `Real.exp_bound'` in `Moment.lean` from `n = 3` to `n = 4` (`1 + x + x^2/2 + x^3/6 + x^4*(5/96)`) and regenerating `RateC588AT.lean` certifies tensor saving `alphaC588AT = 1 - 126611852/10^11` (`0.00126611852`) and all-length DFT saving **`2532237/2000000000` (`0.0012661185`)**, within $5.6 \times 10^{-11}$ of the exact real root.
+
+| Quantity | `canghaimeng` (`63/50000`) | `fringewidth` (`6327/5000000`) | This repository (`2532237/2000000000`) |
+|---|---|---|---|
+| Helper banks (`nb`) | `4,824` | `4,824` | **`4,757`** (`-67` banks) |
+| Live roles per class (`W`) | `11,992` | `11,992` | **`11,925`** (`-67` roles) |
+| Pad profile | `4248×0, 504×1, 72×68` | `4248×0, 504×1, 72×68` | **`4284×0, 472×1, 1×37`** |
+| Tensor saving (`1 - alphaC588AT`) | `1261/10^6` | `12655/10^7` | **`126611852/10^11`** (`0.00126611852`) |
+| Final DFT saving (`Race.bound`) | `63/50000` (`0.00126`) | `6327/5000000` (`0.0012654`) | **`2532237/2000000000`** (`0.0012661185`) |
+
+---
+
 # Exact DFT in Lean: saving 6327/5000000
 
 This fork changes only the rate constants of
