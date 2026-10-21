@@ -26,102 +26,102 @@ theorem blocksC588AT_proper : ∀ b ∈ blocksC588AT, 1 ≤ b.1 ∧ b.1 < 73 := 
   decide
 
 
-theorem term0_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 1 185368 ≤ ((6382798001:ℝ)/2500000) :=
-  term_le 73 1 185368 (126611852/(10:ℝ)^11) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term0_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 1 185368 ≤ ((10212476803077:ℝ)/4000000000) :=
+  term_le 73 1 185368 (12661185597/(10:ℝ)^13) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 26 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term1_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 2 35424 ≤ ((9749509857:ℝ)/10000000) :=
-  term_le 73 2 35424 (126611852/(10:ℝ)^11) ((359731226059:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term1_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 2 35424 ≤ ((97495098578311:ℝ)/100000000000) :=
+  term_le 73 2 35424 (12661185597/(10:ℝ)^13) ((359731226059:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 24 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term2_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 3 20160 ≤ ((2079620197:ℝ)/2500000) :=
-  term_le 73 3 20160 (126611852/(10:ℝ)^11) ((1595923576241:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term2_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 3 20160 ≤ ((41592403943127:ℝ)/50000000000) :=
+  term_le 73 3 20160 (12661185597/(10:ℝ)^13) ((1595923576241:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 23 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term3_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 4 16704 ≤ ((9186593949:ℝ)/10000000) :=
-  term_le 73 4 16704 (126611852/(10:ℝ)^11) ((290416508003:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term3_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 4 16704 ≤ ((45932969749407:ℝ)/50000000000) :=
+  term_le 73 4 16704 (12661185597/(10:ℝ)^13) ((290416508003:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 22 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term4_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 5 4032 ≤ ((138551707:ℝ)/500000) :=
-  term_le 73 5 4032 (126611852/(10:ℝ)^11) ((670255382179:ℝ)/250000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term4_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 5 4032 ≤ ((3463792674653:ℝ)/12500000000) :=
+  term_le 73 5 4032 (12661185597/(10:ℝ)^13) ((670255382179:ℝ)/250000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 21 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term5_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 6 4032 ≤ ((664894691:ℝ)/2000000) :=
-  term_le 73 6 4032 (126611852/(10:ℝ)^11) ((1249349985961:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term5_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 6 4032 ≤ ((33244734552801:ℝ)/100000000000) :=
+  term_le 73 6 4032 (12661185597/(10:ℝ)^13) ((1249349985961:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 21 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term6_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 8 12000 ≤ ((13187550677:ℝ)/10000000) :=
-  term_le 73 8 12000 (126611852/(10:ℝ)^11) ((221101789947:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term6_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 8 12000 ≤ ((8242219173767:ℝ)/6250000000) :=
+  term_le 73 8 12000 (12661185597/(10:ℝ)^13) ((221101789947:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 20 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term7_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 16 3584 ≤ ((1967613353:ℝ)/2500000) :=
-  term_le 73 16 3584 (126611852/(10:ℝ)^11) ((151787071891:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term7_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 16 3584 ≤ ((78704534120823:ℝ)/100000000000) :=
+  term_le 73 16 3584 (12661185597/(10:ℝ)^13) ((151787071891:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 17 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term8_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 32 3584 ≤ ((7863549281:ℝ)/5000000) :=
-  term_le 73 32 3584 (126611852/(10:ℝ)^11) ((16494470767:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term8_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 32 3584 ≤ ((31454197123717:ℝ)/20000000000) :=
+  term_le 73 32 3584 (12661185597/(10:ℝ)^13) ((16494470767:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 14 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term9_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 37 1 ≤ ((634107:ℝ)/1250000) :=
-  term_le 73 37 1 (126611852/(10:ℝ)^11) ((67954152851:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term9_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 37 1 ≤ ((50728558581:ℝ)/100000000000) :=
+  term_le 73 37 1 (12661185597/(10:ℝ)^13) ((67954152851:ℝ)/100000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 13 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term10_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 48 3584 ≤ ((23578540293:ℝ)/10000000) :=
-  term_le 73 48 3584 (126611852/(10:ℝ)^11) ((209629215121:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term10_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 48 3584 ≤ ((235785402931399:ℝ)/100000000000) :=
+  term_le 73 48 3584 (12661185597/(10:ℝ)^13) ((209629215121:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 11 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term11_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 72 1 ≤ ((4931593:ℝ)/5000000) :=
-  term_le 73 72 1 (126611852/(10:ℝ)^11) ((6896661067:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term11_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 72 1 ≤ ((98631859477:ℝ)/100000000000) :=
+  term_le 73 72 1 (12661185597/(10:ℝ)^13) ((6896661067:ℝ)/500000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 6 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem term12_C588AT : T 73 (1 - 126611852/(10:ℝ)^11) 1 1 ≤ ((137733:ℝ)/10000000) :=
-  term_le 73 1 1 (126611852/(10:ℝ)^11) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+theorem term12_C588AT : T 73 (1 - 12661185597/(10:ℝ)^13) 1 1 ≤ ((688662337:ℝ)/50000000000) :=
+  term_le 73 1 1 (12661185597/(10:ℝ)^13) ((85809188823:ℝ)/20000000000) _ (by norm_num) (by norm_num) (by norm_num) (by norm_num)
     (log_le_of_le_expsum _ _ 26 (by norm_num) (by norm_num)
       (by norm_num [Finset.sum_range_succ, Nat.factorial]))
     (by norm_num) (by norm_num)
 
-theorem moment_C588AT_upper : moment 73 (1 - 126611852/(10:ℝ)^11) blocksC588AT ≤ ((119249999993:ℝ)/10000000) := by
-  have hsum : moment 73 (1 - 126611852/(10:ℝ)^11) blocksC588AT
-      = T 73 (1 - 126611852/(10:ℝ)^11) 1 185368 + (T 73 (1 - 126611852/(10:ℝ)^11) 2 35424 + (T 73 (1 - 126611852/(10:ℝ)^11) 3 20160 + (T 73 (1 - 126611852/(10:ℝ)^11) 4 16704 + (T 73 (1 - 126611852/(10:ℝ)^11) 5 4032 + (T 73 (1 - 126611852/(10:ℝ)^11) 6 4032 + (T 73 (1 - 126611852/(10:ℝ)^11) 8 12000 + (T 73 (1 - 126611852/(10:ℝ)^11) 16 3584 + (T 73 (1 - 126611852/(10:ℝ)^11) 32 3584 + (T 73 (1 - 126611852/(10:ℝ)^11) 37 1 + (T 73 (1 - 126611852/(10:ℝ)^11) 48 3584 + 0)))))))))) := rfl
+theorem moment_C588AT_upper : moment 73 (1 - 12661185597/(10:ℝ)^13) blocksC588AT ≤ ((1192499999999989:ℝ)/100000000000) := by
+  have hsum : moment 73 (1 - 12661185597/(10:ℝ)^13) blocksC588AT
+      = T 73 (1 - 12661185597/(10:ℝ)^13) 1 185368 + (T 73 (1 - 12661185597/(10:ℝ)^13) 2 35424 + (T 73 (1 - 12661185597/(10:ℝ)^13) 3 20160 + (T 73 (1 - 12661185597/(10:ℝ)^13) 4 16704 + (T 73 (1 - 12661185597/(10:ℝ)^13) 5 4032 + (T 73 (1 - 12661185597/(10:ℝ)^13) 6 4032 + (T 73 (1 - 12661185597/(10:ℝ)^13) 8 12000 + (T 73 (1 - 12661185597/(10:ℝ)^13) 16 3584 + (T 73 (1 - 12661185597/(10:ℝ)^13) 32 3584 + (T 73 (1 - 12661185597/(10:ℝ)^13) 37 1 + (T 73 (1 - 12661185597/(10:ℝ)^13) 48 3584 + 0)))))))))) := rfl
   rw [hsum]
   linarith [term0_C588AT, term1_C588AT, term2_C588AT, term3_C588AT, term4_C588AT, term5_C588AT, term6_C588AT, term7_C588AT, term8_C588AT, term9_C588AT, term10_C588AT]
 
-theorem moment_C588AT_normalized : moment 73 (1 - 126611852/(10:ℝ)^11) blocksC588AT / (11925:ℝ) < (99999999995:ℝ)/100000000000 := by
+theorem moment_C588AT_normalized : moment 73 (1 - 12661185597/(10:ℝ)^13) blocksC588AT / (11925:ℝ) < (999999999999990777:ℝ)/1000000000000000000 := by
   apply (div_lt_iff₀ (by norm_num : (0:ℝ) < 11925)).mpr
   have h := moment_C588AT_upper
   linarith
 
-/-- **whole-block fact** of `blocksC588AT` at exponent `1 - 126611852/10^11`, fill parameter `s = 40`: the hypothesis `hnum` of `RAM.engine_program_group_list` (u = 73, W = 11925). -/
+/-- **whole-block fact** of `blocksC588AT` at exponent `1 - 12661185597/10^13`, fill parameter `s = 40`: the hypothesis `hnum` of `RAM.engine_program_group_list` (u = 73, W = 11925). -/
 theorem fold_C588AT :
-    ((2:ℝ)^40 - 1) * moment 73 (1 - 126611852/(10:ℝ)^11) blocksC588AT
-      + ((11925:ℕ):ℝ) * (T 73 (1 - 126611852/(10:ℝ)^11) (73 - 1) 1 + T 73 (1 - 126611852/(10:ℝ)^11) 1 1)
+    ((2:ℝ)^40 - 1) * moment 73 (1 - 12661185597/(10:ℝ)^13) blocksC588AT
+      + ((11925:ℕ):ℝ) * (T 73 (1 - 12661185597/(10:ℝ)^13) (73 - 1) 1 + T 73 (1 - 12661185597/(10:ℝ)^13) 1 1)
       < (2:ℝ)^40 * ((11925:ℕ):ℝ) := by
-  have hsum : moment 73 (1 - 126611852/(10:ℝ)^11) blocksC588AT
-      = T 73 (1 - 126611852/(10:ℝ)^11) 1 185368 + (T 73 (1 - 126611852/(10:ℝ)^11) 2 35424 + (T 73 (1 - 126611852/(10:ℝ)^11) 3 20160 + (T 73 (1 - 126611852/(10:ℝ)^11) 4 16704 + (T 73 (1 - 126611852/(10:ℝ)^11) 5 4032 + (T 73 (1 - 126611852/(10:ℝ)^11) 6 4032 + (T 73 (1 - 126611852/(10:ℝ)^11) 8 12000 + (T 73 (1 - 126611852/(10:ℝ)^11) 16 3584 + (T 73 (1 - 126611852/(10:ℝ)^11) 32 3584 + (T 73 (1 - 126611852/(10:ℝ)^11) 37 1 + (T 73 (1 - 126611852/(10:ℝ)^11) 48 3584 + 0)))))))))) := rfl
+  have hsum : moment 73 (1 - 12661185597/(10:ℝ)^13) blocksC588AT
+      = T 73 (1 - 12661185597/(10:ℝ)^13) 1 185368 + (T 73 (1 - 12661185597/(10:ℝ)^13) 2 35424 + (T 73 (1 - 12661185597/(10:ℝ)^13) 3 20160 + (T 73 (1 - 12661185597/(10:ℝ)^13) 4 16704 + (T 73 (1 - 12661185597/(10:ℝ)^13) 5 4032 + (T 73 (1 - 12661185597/(10:ℝ)^13) 6 4032 + (T 73 (1 - 12661185597/(10:ℝ)^13) 8 12000 + (T 73 (1 - 12661185597/(10:ℝ)^13) 16 3584 + (T 73 (1 - 12661185597/(10:ℝ)^13) 32 3584 + (T 73 (1 - 12661185597/(10:ℝ)^13) 37 1 + (T 73 (1 - 12661185597/(10:ℝ)^13) 48 3584 + 0)))))))))) := rfl
   have b0 := term0_C588AT
   have b1 := term1_C588AT
   have b2 := term2_C588AT
@@ -138,7 +138,7 @@ theorem fold_C588AT :
   have e1 : ((2:ℝ)^40 - 1) = 1099511627775 := by norm_num
   have e2 : (2:ℝ)^40 = 1099511627776 := by norm_num
   have e3 : ((11925:ℕ):ℝ) = 11925 := by norm_num
-  have e4 : T 73 (1 - 126611852/(10:ℝ)^11) (73 - 1) 1 = T 73 (1 - 126611852/(10:ℝ)^11) 72 1 := rfl
+  have e4 : T 73 (1 - 12661185597/(10:ℝ)^13) (73 - 1) 1 = T 73 (1 - 12661185597/(10:ℝ)^13) 72 1 := rfl
   rw [e1, e2, e3, e4, hsum]
   linarith
 

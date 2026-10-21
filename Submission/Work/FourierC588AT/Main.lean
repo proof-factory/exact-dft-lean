@@ -57,7 +57,7 @@ lemma theta_ltC588AT : theta < 1 := by
   exact Real.log_lt_log (by linarith) h.2
 
 lemma alpha_thetaC588AT : alphaC588AT < theta := by
-  let d : ℝ := 126611852/(10:ℝ)^11
+  let d : ℝ := 12661185597/(10:ℝ)^13
   have hp : 0<d := by dsimp [d]; norm_num
   have hm : 2 ≤ paperM := by norm_num [paperM]
   have hx : 0<paperMultiplier := lt_trans zero_lt_one multiplier_rangeC588AT.1

@@ -91,7 +91,7 @@ def main():
     assert all(load+pad == 73 and 0 <= pad < 73 for load, pad in zip(loads, pads))
 
     _, log_two_upper = log2_interval(Q(2))
-    a, total = Q(126611852, 10**11), Q(0)
+    a, total = Q(12661185597, 10**13), Q(0)
     for r, n, u in RATE:
         t, exponent = Q(73, r), 0
         while t >= 2:
@@ -105,7 +105,7 @@ def main():
         total += Q(r*n, 73*11925)*exp_upper
     assert sum(r*n for r, n, _ in RATE) == 73*11925-2560
     assert total < 1
-    assert Q(6327, 5000000) < Q(2532237, 2000000000) < a
+    assert Q(2532237, 2000000000) < Q(3165296399, 2500000000000) < a
     print("PASS: 72 injective stages, 4757 bank loads, rational log/exp bounds and strict comparisons")
     print("Exact rational upper bound:", float(total))
 

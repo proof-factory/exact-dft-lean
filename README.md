@@ -1,3 +1,30 @@
+# Exact DFT in Lean: saving 3165296399/2500000000000 (0.0012661185596)
+
+This branch changes only the rate certificate of
+[ptweezy/exact-dft-lean](https://github.com/ptweezy/exact-dft-lean) at commit
+`f9357424312209f85e0c7e28dce0e6bb01986608`, which holds the Lean Verified
+2532237/2000000000 record. The 4757-bank schedule, the fourth-order moment
+lemmas and every proof are theirs and the earlier authors' credited below.
+
+`fold_C588AT` with the existing lemmas and the existing rational log bounds L
+holds for every tensor saving up to about 0.00126611855970. The previous
+certificate rounded each term bound to about 1e-7 and used 126611852/10^11.
+This branch keeps every L and every exp-series length, recomputes each term
+bound `q` from `term_le`'s polynomial rounded up to 1e-11
+(`paper/checkers/check_schedule_rate_certificate.py` checks the moment side
+in exact rationals), and sets:
+
+| Constant | Previous | This branch |
+|---|---|---|
+| tensor saving (`alphaC588AT = 1 - s`) | 126611852/10^11 | 12661185597/10^13 |
+| final saving (`decimalExponentC588AT = 1 - s`) | 2532237/2000000000 | 3165296399/2500000000000 |
+
+The exact fold margin at the new tensor saving is about 120 (left side about
+1.3e16). The exact real root of the construction is 0.0012661185609; a fifth
+exp-series order would add only about 1.2e-12.
+
+---
+
 # Exact DFT in Lean: saving 2532237/2000000000 (0.0012661185)
 
 This repository improves the Lean-verified all-length exact discrete Fourier transform bound from `6327/5000000` (`0.0012654`, [fringewidth/exact-dft-lean](https://github.com/fringewidth/exact-dft-lean)) and `63/50000` (`0.00126`, [canghaimeng/exact-dft-lean](https://github.com/canghaimeng/exact-dft-lean)) to **`2532237/2000000000` (`0.0012661185`)** via two improvements on top of the credited C588AT construction:
