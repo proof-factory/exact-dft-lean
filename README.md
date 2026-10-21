@@ -3,8 +3,19 @@
 This branch changes only the rate certificate of
 [ptweezy/exact-dft-lean](https://github.com/ptweezy/exact-dft-lean) at commit
 `f9357424312209f85e0c7e28dce0e6bb01986608`, which holds the Lean Verified
-2532237/2000000000 record. The 4757-bank schedule, the fourth-order moment
-lemmas and every proof are theirs and the earlier authors' credited below.
+2532237/2000000000 record. All of the mathematics is the work of others:
+
+- ptweezy: the globally optimal 4757-bank schedule (W = 11925), the
+  fourth-order `exp_bound'` moment lemmas, and the rational log bounds L this
+  branch reuses unchanged.
+- canghaimeng: the C588AT construction, the engine instantiation and the
+  Fourier transfer, built on the work credited in [NOTICE](NOTICE) (Sussman,
+  Kothe and Shea, Dugongue, jacklightChen, Mamano, OpenAI and others).
+- fringewidth (earlier, sharpen-6327): the "keep each L, recompute q" method
+  used again here.
+
+This branch adds no new construction and no new lemma. It only regenerates
+numbers in an existing certificate.
 
 `fold_C588AT` with the existing lemmas and the existing rational log bounds L
 holds for every tensor saving up to about 0.00126611855970. The previous
